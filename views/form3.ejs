@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<!-- Compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	</head>
+
+	<div class="valign-wrapper row login-box">
+		<div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
+			<form action="/form2" method="POST">
+				<div class="card-content">
+					<% if(validName){ %>
+
+					<span class="new badge" style="display:block;">Form Sent</span>
+					<%}%>
+					<span class="card-title">Enter credentials</span>
+					<div class="input-field col s12">
+						<% if(validName === "0") { %>
+						<span class="new badge red">Campo requerido</span>
+						<% } %>
+						<i class="material-icons prefix">account_circle</i>
+						<input id="icon_prefix" type="text" class="validate" name="nombre" />
+						<label for="icon_prefix">Name</label>
+					</div>
+					<div class="input-field col s12">
+						<% if(validSurname === "0") { %>
+						<span class="new badge red">Campo requerido</span>
+						<% } %>
+						<i class="material-icons prefix">account_circle</i>
+						<input id="icon_prefix" type="text" class="validate" name="apellido" />
+						<label for="icon_prefix">Surname</label>
+					</div>
+					<div class="input-field col s12">
+						<% if(validPass === "0") { %>
+						<span class="new badge red">Campo requerido</span>
+						<% } %>
+						<i class="material-icons prefix">no_encryption</i>
+						<input id="no_encryption" type="password" class="validate" name="password" />
+						<label for="no_encryption">Password</label>
+					</div>
+					<span class="card-title">Gender</span>
+					<p>
+						<label>
+							<input name="gender" type="radio" value="Male" checked />
+							<span>Male</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input name="gender" type="radio" value="Female" checked />
+							<span>Female</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input name="gender" type="radio" value="Other" checked />
+							<span>Other</span>
+						</label>
+					</p>
+					<div class="card-action center-align">
+						<button class="btn waves-effect waves-light" type="submit">
+							Submit
+							<i class="material-icons right">send</i>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</html>
